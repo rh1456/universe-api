@@ -53,8 +53,7 @@ namespace universe_api.Controllers
         {
           Id = newbie.Id,
           PlaysQuidditch = newbie.PlaysQuidditch,
-          SchoolHouseId = newbie.SchoolHouseId,
-          FullName = newbie.FullName
+          SchoolHouseId = newbie.SchoolHouseId
         };
         return Ok(rv);
       }

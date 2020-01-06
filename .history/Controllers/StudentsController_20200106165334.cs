@@ -34,8 +34,8 @@ namespace universe_api.Controllers
     public ActionResult CreateStudent(NewStudent vm)
     {
       var db = new DatabaseContext();
-      var schoolHouse = db.SchoolHouses.FirstOrDefault(house => house.Id == vm.SchoolHouseId);
-      if (schoolHouse == null)
+      var student = db.SchoolHouses.FirstOrDefault(house => house.Id == vm.SchoolHouseId);
+      if (student == null)
       {
         return NotFound();
       }
@@ -53,8 +53,7 @@ namespace universe_api.Controllers
         {
           Id = newbie.Id,
           PlaysQuidditch = newbie.PlaysQuidditch,
-          SchoolHouseId = newbie.SchoolHouseId,
-          FullName = newbie.FullName
+          SchoolHouseId = newbie.SchoolHouseId
         };
         return Ok(rv);
       }
